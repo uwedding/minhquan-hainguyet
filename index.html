@@ -7509,11 +7509,11 @@
                             <div class="image-background p-absolute lazy"></div>
                         </div>
                     </div>
-                    <div id="w-lpoyexmx" class="com-image-block p-absolute">
+                    <!-- <div id="w-lpoyexmx" class="com-image-block p-absolute">
                         <div class="image-block-css p-relative full-width full-height full-mask-size mask-position">
                             <div class="image-background p-absolute lazy"></div>
                         </div>
-                    </div>
+                    </div> -->
                     <div id="w-l4fdtip6" class="com-image-block p-absolute">
                         <div class="image-block-css p-relative full-width full-height full-mask-size mask-position">
                             <div class="image-background p-absolute lazy"></div>
@@ -7666,10 +7666,16 @@
                             <p class="text-block-css full-width">Nhằm Ngày 16 Tháng 03 Năm Bính Ngọ</p>
                         </div>
                     </div>
-                    <div id="w-f4yc955s" class="com-text-block p-absolute is-animation">
+                    <div id="w-f4yc955s" class="com-text-block p-absolute is-animation groom">
                         <div class="text-block">
                             <p class="text-block-css full-width">Tại Nhà Số 4 Ngõ 62, Xóm Đồng Đỗ, Thôn Phương Khê,Ba
                                 Vì,TP Hà Nội</p>
+                        </div>
+                    </div>
+                    <div id="w-f4yc955s" class="com-text-block p-absolute is-animation bride">
+                        <div class="text-block">
+                            <p class="text-block-css full-width">Số 84, Tổ 52, Khu Dân Cư Quang Trung, TX Phú Thọ,
+                                Tỉnh Phú Thọ</p>
                         </div>
                     </div>
                     <div id="w-zyy1dfjh" class="p-absolute is-animation">
@@ -7748,11 +7754,11 @@
                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe></div>
                     </div>
-                    <div id="w-gtat9zjl" class="com-button p-absolute is-animation">
+                    <!-- <div id="w-gtat9zjl" class="com-button p-absolute is-animation">
                         <div class="button-css full-height full-width lazy"><span class="button-loader"></span>
                             <div class="button-text full-width u-select-none">Xem Chỉ Đường</div>
                         </div>
-                    </div>
+                    </div> -->
                     <div id="w-adxoew9t" class="com-text-block p-absolute is-animation">
                         <div class="text-block">
                             <p class="text-block-css full-width">Tại tư gia nhà Trai</p>
@@ -8067,6 +8073,149 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="w-0dyp082l" class="com-html-box p-absolute">
+        <div class="frame-html-box full-width full-height"><!-- ====== AUDIO & TOGGLE (HTML Box) ====== -->
+            <!-- Nhạc nền -->
+            <audio id="background-music" src="
+  
+  
+  https://statics.pancake.vn/web-media/5e/ee/bf/4a/afa10d3bdf98ca17ec3191ebbfd3c829d135d06939ee1f1b712d731d-w:0-h:0-l:2938934-t:audio/mpeg.mp3
+  
+  
+  " preload="none" loop=""></audio>
+
+            <!-- Nút toggle nhạc (cố định góc trái dưới) -->
+            <div id="music-toggle" title="Bật / Tắt nhạc" aria-label="Bật / Tắt nhạc" class="">
+                <!-- PNG khi NHẠC TẮT -->
+                <img id="play-icon"
+                    src="https://content.pancake.vn/1/02/d4/a7/88/fef5132f979892c1778a688f2039942fc24b396b332750179775f87e-w:200-h:200-l:8183-t:image/png.png"
+                    alt="Play" width="44" height="44" decoding="async" loading="lazy" style="display: block;">
+                <!-- GIF khi NHẠC BẬT -->
+                <img id="pause-icon"
+                    src="https://content.pancake.vn/1/31/08/c9/52/c9f574ca2fa8481e1c8c657100583ddfbf47e33427d480a7dc32e788-w:200-h:200-l:242141-t:image/gif.gif"
+                    alt="Pause" width="44" height="44" decoding="async" loading="lazy" style="display: none;">
+            </div>
+
+            <style>
+                /* ====== STYLE: vị trí & hiệu ứng nút ====== */
+                #music-toggle {
+                    position: fixed;
+                    left: 14px;
+                    /* ghim bên trái */
+                    bottom: 14px;
+                    z-index: 99999;
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.3);
+                    /* nền trắng */
+                    backdrop-filter: blur(4px);
+                    display: grid;
+                    place-items: center;
+                    cursor: pointer;
+                    user-select: none;
+                    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+                }
+
+                #music-toggle:hover {
+                    transform: translateY(-1px) scale(1.03);
+                    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+                }
+
+                #music-toggle img {
+                    display: block;
+                    width: 44px;
+                    height: 44px;
+                    object-fit: contain;
+                    pointer-events: none;
+                }
+
+
+                #music-toggle.vibrating {
+                    animation: wc-pulse 1.6s ease-out infinite;
+                    background: rgba(255, 255, 255, 0.3);
+                    /* nền trắng khi đang rung */
+                }
+
+                /* Ép hiển thị đúng icon trong mọi theme */
+                #music-toggle #play-icon,
+                #music-toggle #pause-icon {
+                    backface-visibility: visible !important;
+                    -webkit-backface-visibility: visible !important;
+                }
+
+                /* Tối ưu chạm cho mobile */
+                @media (hover: none) {
+                    #music-toggle {
+                        bottom: 12px;
+                        left: 12px;
+                    }
+                }
+            </style>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const audio = document.getElementById("background-music");
+                    const toggleButton = document.getElementById("music-toggle");
+                    const playIcon = document.getElementById("play-icon");   // PNG (nhạc tắt)
+                    const pauseIcon = document.getElementById("pause-icon"); // GIF (nhạc bật)
+
+                    audio.volume = 0.6;
+                    let isPlaying = false;
+                    let hasStarted = false;
+
+                    function setUI(playing) {
+                        if (playing) {
+                            playIcon.style.display = "none";
+                            pauseIcon.style.display = "block";
+                            toggleButton.classList.add("vibrating");
+                        } else {
+                            playIcon.style.display = "block";
+                            pauseIcon.style.display = "none";
+                            toggleButton.classList.remove("vibrating");
+                        }
+                    }
+
+                    const startOnce = () => {
+                        if (!hasStarted) {
+                            audio.play().then(() => {
+                                isPlaying = true;
+                                hasStarted = true;
+                                setUI(true);
+                            }).catch(() => { setUI(false); });
+                        }
+                    };
+
+                    document.body.addEventListener("click", startOnce, { once: true });
+                    document.body.addEventListener("pointerdown", startOnce, { once: true, passive: true });
+                    document.body.addEventListener("touchstart", startOnce, { once: true, passive: true });
+                    document.body.addEventListener("touchmove", startOnce, { once: true, passive: true });
+
+                    toggleButton.addEventListener("click", function (event) {
+                        event.stopPropagation();
+                        if (isPlaying) {
+                            audio.pause();
+                            isPlaying = false;
+                            setUI(false);
+                        } else {
+                            audio.play().then(() => {
+                                isPlaying = true;
+                                hasStarted = true;
+                                setUI(true);
+                            }).catch(() => { });
+                        }
+                    });
+
+                    audio.addEventListener("play", () => { isPlaying = true; setUI(true); });
+                    audio.addEventListener("pause", () => { isPlaying = false; setUI(false); });
+                });
+            </script>
+
+
+
         </div>
     </div>
     <div id="popup-backdrop" class="popup-backdrop full-width full-height d-none"></div>
